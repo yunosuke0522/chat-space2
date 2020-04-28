@@ -1,0 +1,22 @@
+.chat-side
+  .side-header
+    .side-header__box
+      .side-header__box__user-name
+        クリスティアーノ
+      %ul.side-header__box__menu
+        %li.side-header__box__menu__new-group
+          = link_to "#" do
+            = icon('fas', 'edit' ,class: 'icon')
+        %li.side-header__box__menu__edit-user
+          = link_to "#" do
+            = icon('fas', 'cog' ,class: 'icon' )
+  .groups
+    .group
+      .group__group-name
+        クリスティアーノ・ロナウド
+      .group__group-message
+        なぜ笑うんだい？
+      .group__group-name
+        キリアン・ムバッペ
+      .group__group-message
+        やあ
