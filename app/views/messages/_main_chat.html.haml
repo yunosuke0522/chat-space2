@@ -2,28 +2,24 @@
   .main-headr
     .main-headr__left-box
       .main-headr__left-box__current-group
-        アレッサンドロ・デル・ピエロ
+        = @group.name
       .main-headr__left-box__menmber-list
-        Member：鶴田洋平
+        Member：
+        %li.main-header__left-box__member-name
+          - @group.group_users.each do |group_user|
+            = group_user.user.name
     .main-headr__edit-btn
       = link_to '#' do
         edit
 
   .messages
-    .message
-      .message__upper-info
-        .message__upper-name
-          鶴田洋平
-        .message__upper-data
-          2020/04/07(a)13:59:00
-      %p.message__text
-        なぜ笑うんだい？
+    = render @messages
 
   .form
-    %form.form__new-message
+    = form_with model: [@group, @message], html: {class: "form__new-message"}, local: true do |f|
       .input-box
-        %input{type: "text", class: "input-box__text", placeholder: "type a message"}
-        %label{class: "input-box__image"}
+        = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
+        = f.label :image, class: 'input-box__image' do
           = icon('fas', 'image')
-          %input{type: "file", class: "input-box__image__file"}
-      %input{type: "submit", class: "submit-btn"}
+          = f.file_field :image, class: 'input-box__image__file'
+      = f.submit 'send', class: 'submit-btn'
