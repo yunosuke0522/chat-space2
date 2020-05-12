@@ -1,4 +1,5 @@
 $(function(){
+  
   function buildHTML(message){
     image = ( message.image ) ? `<img class="message__image" src=${message.image} >` : "";
       let html =
@@ -20,6 +21,7 @@ $(function(){
         </div>`
       return html; 
   }
+
   $('.form__new-message').on('submit', function(e){
     e.preventDefault();
     let formData = new FormData(this);
