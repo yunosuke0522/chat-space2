@@ -9,7 +9,7 @@
           - @group.group_users.each do |group_user|
             = group_user.user.name
     .main-headr__edit-btn
-      = link_to '#' do
+      = link_to edit_group_path(@group) do
         edit
 
   .messages
@@ -21,5 +21,5 @@
         = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
         = f.label :image, class: 'input-box__image' do
           = icon('fas', 'image')
-          = f.file_field :image, class: 'input-box__image__file'
+          = f.file_field :image, class: 'input-box__image__file', id: "message_image"
       = f.submit 'send', class: 'submit-btn'
