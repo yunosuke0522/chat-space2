@@ -47,9 +47,10 @@ $(function(){
       alert("メッセージ送信に失敗しました");
     })
 
-    .always(function(){            
+    .always(function(){
       $('.submit-btn').prop("disabled", false);
     });
+
   });
   
 });
