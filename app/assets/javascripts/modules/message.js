@@ -3,13 +3,13 @@ $(function(){
   function buildHTML(message){
     image = ( message.image ) ? `<img class="message__image" src=${message.image} >` : "";
       let html =
-        `<div class="message">
+        `<div class="message"data-message-id=${message.id}>
           <div class="message__upper-info">
             <div class="message__upper-name">
               ${message.user_name}
             </div>
             <div class="message__upper-data">
-              ${message.date}
+              ${message.created_at}
             </div>
           </div>
           <div class="message__text">
@@ -37,7 +37,6 @@ $(function(){
     })
 
     .done(function(data){
-      console.log("ok")
       let html = buildHTML(data);
       $('.messages').append(html);    
       $('form')[0].reset();
@@ -48,9 +47,10 @@ $(function(){
       alert("メッセージ送信に失敗しました");
     })
 
-    .always(function(){            
+    .always(function(){
       $('.submit-btn').prop("disabled", false);
     });
 
   });
+  
 });
