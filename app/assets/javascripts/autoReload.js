@@ -9,7 +9,7 @@ $(function(){
               ${message.user_name}
             </div>
             <div class="message__upper-data">
-              ${message.date}
+              ${message.created_at}
             </div>
           </div>
           <div class="message__text">
@@ -42,11 +42,10 @@ $(function(){
         $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
       }
     })
-
+    
     .fail(function() {
       alert('error');
     });
-    
   };
     setInterval(reloadMessages, 7000);
 
