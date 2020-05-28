@@ -15,6 +15,7 @@ a {
     overflow: scroll;
     &__left-box{
       margin-top: 35px;
+      list-style: none;
       &__current-group{
         font-size: 20px;
         color: $blue_dark;
@@ -34,6 +35,9 @@ a {
       border: solid 1px $light_blue;  
       position: absolute;  
       right: 40px;
+    a{
+      color: #38aef0;
+    }
     }
   }
   .messages{

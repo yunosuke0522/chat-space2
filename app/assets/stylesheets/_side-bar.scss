@@ -19,8 +19,12 @@
       display: flex;
       justify-content: space-between;
       list-style: none;
+      
       &__menu{
         display: flex;
+        &__edit-user{
+          margin-left: 0.3rem;
+        }
       }
     }
   }
