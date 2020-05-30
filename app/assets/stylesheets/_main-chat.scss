@@ -60,6 +60,7 @@ a {
           color: $light_gray;
           font-size: 12px;
           margin-left: 10px;
+          padding-top: 4px;
         }
     }
   }
@@ -97,6 +98,7 @@ a {
           margin-left: 15px;
           background-color: $light_blue;
           color: $white;
+          border-style: none;
           cursor: pointer;
         }
       }
